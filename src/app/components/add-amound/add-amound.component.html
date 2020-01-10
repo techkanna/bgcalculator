@@ -1,0 +1,17 @@
+<div class="add-amount">
+  <form (ngSubmit)="onSubmit()">
+    <input
+      type="number"
+      name="amount"
+      placeholder="Amount"
+      [(ngModel)]="amount"
+    />
+    <input
+      type="text"
+      name="desc"
+      placeholder="Description"
+      [(ngModel)]="desc"
+    />
+    <input type="submit" value="Add" />
+  </form>
+</div>

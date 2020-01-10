@@ -1,0 +1,22 @@
+<div class="desc-list">
+  <div class="income">
+    <h2>INCOME</h2>
+    <app-desc-item
+      class="app-desc-item"
+      *ngFor="let item of incomeItem"
+      [item]="item"
+      [msg]="'inc'"
+    >
+    </app-desc-item>
+  </div>
+  <div class="exp">
+    <h2>EXPENSES</h2>
+    <app-desc-item
+      class="app-desc-item"
+      *ngFor="let item of expenseItem"
+      [item]="item"
+      [msg]="'exp'"
+    >
+    </app-desc-item>
+  </div>
+</div>

@@ -1,0 +1,11 @@
+.main-banner {
+  height: 10rem;
+  background-color: rgb(30, 105, 155);
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.main-banner span {
+  font-size: 3rem;
+}

@@ -1,0 +1,51 @@
+.ui-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.267);
+  z-index: 20;
+}
+
+.ui-modal .edit {
+  padding: 1rem;
+  width: 25rem;
+  margin: 15rem auto;
+  box-shadow: 2px 2px 30px 10px rgba(46, 46, 46, 0.801);
+  background-color: #fff;
+  color: #333;
+  border-radius: 0.3rem;
+}
+
+.ui-modal .edit h2 {
+  margin-bottom: 0.8rem;
+}
+.ui-modal .edit form {
+  display: flex;
+  justify-content: space-between;
+}
+
+.ui-modal .edit form input {
+  padding: 0.3rem;
+  background-color: rgba(221, 207, 207, 0.452);
+  border: none;
+  font-size: 1rem;
+  border-radius: 0.3rem;
+  color: #444;
+}
+
+.ui-modal .edit form input[type="number"]:focus {
+  outline: 2px solid orchid;
+}
+
+.ui-modal .edit form input[type="number"] {
+  width: 6rem;
+}
+.ui-modal .edit form input[type="text"] {
+  min-width: 8rem;
+}
+.ui-modal .edit form input[type="submit"] {
+  background-color: rgb(7, 114, 69);
+  color: #fff;
+}

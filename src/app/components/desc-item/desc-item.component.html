@@ -1,0 +1,9 @@
+<p
+  class="item"
+  (mouseenter)="mouseEnter($event)"
+  (mouseleave)="mouseLeave()"
+  #ri
+>
+  {{ item.desc }} <span [ngClass]="setClass()">{{ item.amount }}</span
+  ><span [ngClass]="setDelClass()">x</span>
+</p>

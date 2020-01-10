@@ -1,0 +1,36 @@
+.add-amount {
+  /* background-color: #999; */
+  border-bottom: 1px solid rgba(51, 51, 51, 0.267);
+  display: flex;
+  justify-content: center;
+}
+
+.add-amount form {
+  padding: 1rem 0;
+}
+
+.add-amount form input {
+  padding: 0.5rem 0.6rem;
+  margin-right: 0.5rem;
+  background-color: rgb(221, 207, 207);
+  border: none;
+  outline: none;
+  font-size: 1rem;
+  border-radius: 0.3rem;
+}
+
+.add-amount form input[type="number"] {
+  width: 6rem;
+}
+.add-amount form input[type="text"] {
+  min-width: 8rem;
+}
+.add-amount form input[type="submit"] {
+  background-color: rgb(187, 92, 235);
+  color: #fff;
+}
+
+.add-amount form input[type="number"]:focus,
+.add-amount form input[type="text"]:focus {
+  outline: 1.5px solid orchid;
+}

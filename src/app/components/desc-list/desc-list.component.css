@@ -1,0 +1,22 @@
+.desc-list {
+  display: flex;
+  width: 80%;
+  margin: 0 auto;
+  padding: 0.5rem;
+}
+
+.desc-list h2 {
+  margin: 0.8rem 0;
+}
+
+.income {
+  flex: 6;
+  color: rgb(27, 92, 14);
+  padding-right: 0.7rem;
+}
+
+.exp {
+  flex: 6;
+  color: rgb(155, 13, 13);
+  padding-left: 0.7rem;
+}
