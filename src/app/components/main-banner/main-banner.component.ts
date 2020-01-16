@@ -1,5 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { ItemService } from "../../services/item.service";
+import { Result } from "src/app/models/Result";
 
 @Component({
   selector: "app-main-banner",
@@ -7,19 +8,15 @@ import { ItemService } from "../../services/item.service";
   styleUrls: ["./main-banner.component.css"]
 })
 export class MainBannerComponent implements OnInit {
-  result: number = 0;
+  result: Result = this.itemService.result;
 
   constructor(private itemService: ItemService) {}
 
-  ngOnInit() {
-    console.log(
-      "from-banner---this.itemService.result" + this.itemService.result
-    );
-    console.log("from-banner---result" + this.result);
-    this.result = this.itemService.result;
-    console.log(
-      "from-banner---this.itemService.result" + this.itemService.result
-    );
-    console.log("from-banner---result" + this.result);
+  ngOnInit() {}
+  getClass() {
+    return {
+      red: this.result.amount < 0,
+      green: this.result.amount > 0
+    };
   }
 }

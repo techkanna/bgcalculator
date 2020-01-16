@@ -15,12 +15,15 @@ export class AddAmoundComponent implements OnInit {
   ngOnInit() {}
 
   onSubmit() {
-    if (this.amount != 0 || this.amount != null || this.amount != undefined) {
+    if (this.amount != 0 && this.amount != null && this.amount != undefined) {
       if (this.amount > 0) {
         this.itemService.updateIncomeItems(this.amount, this.desc);
       } else {
         this.itemService.updateExpenseItems(this.amount, this.desc);
       }
     }
+
+    this.amount = null;
+    this.desc = "";
   }
 }

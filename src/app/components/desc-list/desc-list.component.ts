@@ -7,26 +7,20 @@ import { Item } from "src/app/models/Item";
   styleUrls: ["./desc-list.component.css"]
 })
 export class DescListComponent implements OnInit {
-  incomeItem: Item[];
-  expenseItem: Item[];
+  incomeItem: Item[] = this.itemService.incomeItems;
+  expenseItem: Item[] = this.itemService.expenseItems;
 
   constructor(private itemService: ItemService) {}
 
-  ngOnInit() {
-    console.log("from desc List == " + this.itemService.expenseItems);
-    console.log("from desc List == " + this.expenseItem);
-    this.expenseItem = this.itemService.expenseItems;
-    this.incomeItem = this.itemService.incomeItems;
-    console.log("from desc List == " + this.itemService.expenseItems);
-    console.log("from desc List == " + this.expenseItem);
-  }
+  ngOnInit() {}
 
   deleteItem(item: Item) {
+    this.itemService.result.amount -= item.amount;
     if (item.amount > 0) {
-      this.incomeItem = this.incomeItem.filter((it, i) => i != item.id);
+      this.incomeItem = this.incomeItem.filter(it => it.id != item.id);
       this.itemService.incomeItems = this.incomeItem;
-    } else if (item.amount < 0) {
-      this.expenseItem = this.expenseItem.filter((it, i) => i != item.id);
+    } else {
+      this.expenseItem = this.expenseItem.filter(it => it.id != item.id);
       this.itemService.expenseItems = this.expenseItem;
     }
   }

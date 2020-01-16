@@ -1,11 +1,10 @@
 <p
   class="item"
-  (mouseenter)="mouseEnter(del, $event)"
+  (mouseenter)="mouseEnter(del)"
   (mouseleave)="mouseLeave(del)"
-  id="{{ i }}"
-  #parent
+  (click)="showModal(item)"
 >
   {{ item.desc }}
   <span [ngClass]="setClass()">{{ item.amount }}</span
-  ><span class="del" (click)="delItem(item, parent)" #del>x</span>
+  ><span class="del" (click)="delItem(item)" #del>x</span>
 </p>

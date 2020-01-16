@@ -1,6 +1,6 @@
 .main-banner {
   height: 10rem;
-  background-color: rgb(30, 105, 155);
+  background-color: rgb(38, 124, 182);
   color: #fff;
   display: flex;
   justify-content: center;
@@ -8,4 +8,12 @@
 }
 .main-banner span {
   font-size: 3rem;
+}
+
+.red {
+  color: rgba(202, 7, 17, 0.938);
+}
+
+.green {
+  color: rgba(52, 202, 22, 0.863);
 }
