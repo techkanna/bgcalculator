@@ -13,7 +13,21 @@ export class DescListComponent implements OnInit {
   constructor(private itemService: ItemService) {}
 
   ngOnInit() {
+    console.log("from desc List == " + this.itemService.expenseItems);
+    console.log("from desc List == " + this.expenseItem);
     this.expenseItem = this.itemService.expenseItems;
     this.incomeItem = this.itemService.incomeItems;
+    console.log("from desc List == " + this.itemService.expenseItems);
+    console.log("from desc List == " + this.expenseItem);
+  }
+
+  deleteItem(item: Item) {
+    if (item.amount > 0) {
+      this.incomeItem = this.incomeItem.filter((it, i) => i != item.id);
+      this.itemService.incomeItems = this.incomeItem;
+    } else if (item.amount < 0) {
+      this.expenseItem = this.expenseItem.filter((it, i) => i != item.id);
+      this.itemService.expenseItems = this.expenseItem;
+    }
   }
 }

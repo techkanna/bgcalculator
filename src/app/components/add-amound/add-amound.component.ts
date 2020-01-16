@@ -17,17 +17,9 @@ export class AddAmoundComponent implements OnInit {
   onSubmit() {
     if (this.amount != 0 || this.amount != null || this.amount != undefined) {
       if (this.amount > 0) {
-        const income = this.itemService.incomeItems;
-        income.push({
-          amount: this.amount,
-          desc: this.desc
-        });
+        this.itemService.updateIncomeItems(this.amount, this.desc);
       } else {
-        const expense = this.itemService.expenseItems;
-        expense.push({
-          amount: this.amount,
-          desc: this.desc
-        });
+        this.itemService.updateExpenseItems(this.amount, this.desc);
       }
     }
   }

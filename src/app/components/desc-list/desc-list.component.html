@@ -3,9 +3,11 @@
     <h2>INCOME</h2>
     <app-desc-item
       class="app-desc-item"
-      *ngFor="let item of incomeItem"
+      *ngFor="let item of incomeItem; let i = index"
+      [i]="i"
       [item]="item"
       [msg]="'inc'"
+      (deleteItem)="deleteItem($event)"
     >
     </app-desc-item>
   </div>
@@ -13,9 +15,11 @@
     <h2>EXPENSES</h2>
     <app-desc-item
       class="app-desc-item"
-      *ngFor="let item of expenseItem"
+      *ngFor="let item of expenseItem; let i = index"
+      [i]="i"
       [item]="item"
       [msg]="'exp'"
+      (deleteItem)="deleteItem($event)"
     >
     </app-desc-item>
   </div>

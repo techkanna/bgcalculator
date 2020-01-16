@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from "@angular/core";
+import { Component, OnInit, Input, EventEmitter, Output } from "@angular/core";
 import { Item } from "src/app/models/Item";
 
 @Component({
@@ -9,7 +9,10 @@ import { Item } from "src/app/models/Item";
 export class DescItemComponent implements OnInit {
   @Input() item: Item[];
   @Input() msg: string;
-  taggle: boolean = false;
+  @Input() i: number;
+
+  @Output() deleteItem: EventEmitter<Item> = new EventEmitter();
+
   constructor() {}
 
   ngOnInit() {}
@@ -22,20 +25,16 @@ export class DescItemComponent implements OnInit {
   }
 
   mouseEnter(e: any) {
-    console.log(e);
-    this.taggle = true;
-    // console.log("true me");
+    e.classList.add("see");
   }
 
-  mouseLeave() {
-    this.taggle = false;
-    // console.log("false me");
+  mouseLeave(e: any) {
+    e.classList.remove("see");
   }
 
-  setDelClass() {
-    return {
-      del: true,
-      see: this.taggle
-    };
+  delItem(item: Item, parent: any) {
+    let custom = parent.id;
+    item.id = custom;
+    this.deleteItem.emit(item);
   }
 }

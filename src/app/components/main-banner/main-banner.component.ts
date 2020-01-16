@@ -1,4 +1,5 @@
 import { Component, OnInit } from "@angular/core";
+import { ItemService } from "../../services/item.service";
 
 @Component({
   selector: "app-main-banner",
@@ -7,7 +8,18 @@ import { Component, OnInit } from "@angular/core";
 })
 export class MainBannerComponent implements OnInit {
   result: number = 0;
-  constructor() {}
 
-  ngOnInit() {}
+  constructor(private itemService: ItemService) {}
+
+  ngOnInit() {
+    console.log(
+      "from-banner---this.itemService.result" + this.itemService.result
+    );
+    console.log("from-banner---result" + this.result);
+    this.result = this.itemService.result;
+    console.log(
+      "from-banner---this.itemService.result" + this.itemService.result
+    );
+    console.log("from-banner---result" + this.result);
+  }
 }

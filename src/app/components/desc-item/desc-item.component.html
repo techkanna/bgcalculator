@@ -1,9 +1,11 @@
 <p
   class="item"
-  (mouseenter)="mouseEnter($event)"
-  (mouseleave)="mouseLeave()"
-  #ri
+  (mouseenter)="mouseEnter(del, $event)"
+  (mouseleave)="mouseLeave(del)"
+  id="{{ i }}"
+  #parent
 >
-  {{ item.desc }} <span [ngClass]="setClass()">{{ item.amount }}</span
-  ><span [ngClass]="setDelClass()">x</span>
+  {{ item.desc }}
+  <span [ngClass]="setClass()">{{ item.amount }}</span
+  ><span class="del" (click)="delItem(item, parent)" #del>x</span>
 </p>
